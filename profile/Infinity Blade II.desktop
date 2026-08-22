@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Infinity Blade II
+Exec=wine D:\\\\InfinityBlade\\\\Binaries\\\\Win64\\\\IB2.exe
+Type=Application
+StartupNotify=true
+Path=D:\\\\InfinityBlade\\\\Binaries\\\\Win64
