@@ -1,0 +1,17 @@
+{
+  "name": "Infinity Blade II",
+  "device": "Samsung Galaxy S23 Ultra",
+  "soc": "Snapdragon 8 Gen 2",
+  "gpu": "Adreno 740",
+  "androidGameFolder": "/storage/emulated/0/Download/InfinityBlade",
+  "wineDrive": "D:",
+  "windowsExecutable": "D:\\InfinityBlade\\Binaries\\Win64\\IB2.exe",
+  "screenSize": "1280x720",
+  "graphicsDriver": "turnip",
+  "dxWrapper": "dxvk",
+  "box64Preset": "performance",
+  "audio": "alsa-or-pulseaudio",
+  "forceFullscreen": true,
+  "containerId": 1,
+  "notes": "IB2 is a 64-bit Windows UE3/D3D9 build. DirectX 9 should translate through DXVK."
+}
