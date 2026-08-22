@@ -1,0 +1,40 @@
+name: Build IB2 Android Wrapper
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout wrapper kit
+        uses: actions/checkout@v4
+
+      - name: Checkout Winlator source
+        uses: actions/checkout@v4
+        with:
+          repository: brunodev85/winlator-app
+          path: upstream
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Apply IB2 patch
+        run: python3 patch/apply_patch.py upstream
+
+      - name: Build APK
+        working-directory: upstream
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Infinity-Blade-II-Android-Wrapper
+          path: upstream/app/build/outputs/apk/debug/*.apk
